@@ -188,3 +188,4 @@ Chatbot improvements 🚀 at 2024-01-27 5:5:31
 Chatbot improvements 📦 at 2024-01-27 4:2:46
 Improved UI/UX ✨ at 2024-01-27 16:59:16
 Enhancing NLP flow 💡 at 2024-01-28 4:3:17
+Bug fixes 💡 at 2024-01-28 17:18:6
