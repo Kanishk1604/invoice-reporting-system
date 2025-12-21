@@ -17,7 +17,7 @@ public class InvoiceReportingApplication {
 		SpringApplication.run(InvoiceReportingApplication.class, args);
 	}
 	@Bean
-	CommandLineRunner runInvoices(InvoiceGenerationService service) {
+	CommandLineRunner runOnce(InvoiceGenerationService service) {
 		return args -> service.generateInvoicesForShippedOrders();
 	}
 }
