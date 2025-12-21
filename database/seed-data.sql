@@ -21,4 +21,5 @@ VALUES (
 INSERT INTO OrderItems (OrderId, ProductName, Quantity, UnitPrice)
 VALUES
 (1, 'Laptop', 2, 1200.00),
-(1, 'USB-C Dock', 1, 250.00);
+(1, 'USB-C Dock', 1, 250.00),
+(1, 'Wireless Mouse', 3, 45.00);
