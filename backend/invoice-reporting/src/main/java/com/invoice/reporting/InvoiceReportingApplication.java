@@ -6,18 +6,17 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 import com.invoice.reporting.service.InvoiceGenerationService;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
-
-
-
+@EnableScheduling
 @SpringBootApplication
 public class InvoiceReportingApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(InvoiceReportingApplication.class, args);
 	}
-	@Bean
-	CommandLineRunner runOnce(InvoiceGenerationService service) {
-		return args -> service.generateInvoicesForShippedOrders();
-	}
+// 	@Bean
+// 	CommandLineRunner runOnce(InvoiceGenerationService service) {
+// 		return args -> service.generateInvoicesForShippedOrders();
+// 	}
 }

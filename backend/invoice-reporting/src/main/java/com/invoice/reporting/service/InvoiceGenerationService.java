@@ -46,9 +46,9 @@ public class InvoiceGenerationService {
             List<Order> shippedOrders = orderRepository.findByStatus("SHIPPED");
 
             for(Order order: shippedOrders){
-                // if (invoiceRepository.findByOrder_OrderId(order.getOrderId()).isPresent()) {
-                //     continue;
-                // }
+                if (invoiceRepository.existsByOrder_OrderId(order.getOrderId())) {
+                    continue;
+                }
                 List<OrderItem> items_ordered = orderItemRepository.findByOrder_OrderId(order.getOrderId());
 
                 double sum = items_ordered.stream()

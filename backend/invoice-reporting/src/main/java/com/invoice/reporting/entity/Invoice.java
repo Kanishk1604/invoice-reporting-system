@@ -2,7 +2,7 @@ package com.invoice.reporting.entity;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
-
+//(fetch = FetchType.LAZY)
 @Entity
 @Table(name = "Invoices")
 public class Invoice {
@@ -12,7 +12,7 @@ public class Invoice {
     @Column(name = "InvoiceId")
     private Integer invoiceId;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "OrderId")
     private Order order;
 
