@@ -19,5 +19,6 @@
 -- ALTER TABLE InvoiceRunLogs
 -- ADD StartedAt DATETIME2,
 --     FinishedAt DATETIME2;
-
-SELECT * FROM InvoiceRunLogs ORDER BY StartedAt DESC;
+ALTER TABLE InvoiceRunLogs
+ADD IsActive BIT DEFAULT 0;
+-- SELECT * FROM InvoiceRunLogs ORDER BY StartedAt DESC;

@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface InvoiceRunLogRepository extends JpaRepository<InvoiceRunLog, Integer> {
+    boolean existsByIsActiveTrue();
 }

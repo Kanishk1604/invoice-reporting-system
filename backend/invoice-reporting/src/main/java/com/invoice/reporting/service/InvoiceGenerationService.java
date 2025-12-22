@@ -38,9 +38,12 @@ public class InvoiceGenerationService {
         runLog.setStartedAt(LocalDateTime.now());
         runLog.setInvoicesGenerated(0); 
         runLog.setStatus("RUNNING");
+        runLog.setIsActive(true);
         runLogRepository.save(runLog);
         int generatedCount = 0;
-
+        if (runLogRepository.existsByIsActiveTrue()) {
+            return; // another run is already in progress
+        }
         try{
             
             List<Order> shippedOrders = orderRepository.findByStatus("SHIPPED");
@@ -79,6 +82,7 @@ public class InvoiceGenerationService {
             runLog.setErrorMessage(e.getMessage());
         }
         runLog.setFinishedAt(LocalDateTime.now());
+        runLog.setIsActive(false);
         runLogRepository.save(runLog);
     }
 }

@@ -27,6 +27,9 @@ public class InvoiceRunLog {
     @Column(name = "ErrorMessage")
     private String errorMessage;
 
+    @Column(name = "IsActive")
+    private Boolean isActive;
+
     // getters and setters
     public Integer getRunId() {
         return runId;
@@ -64,5 +67,10 @@ public class InvoiceRunLog {
     public void setErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
     }
-    
+    public Boolean getIsActive() {
+        return isActive;
+    }
+    public void setIsActive(Boolean isActive) {
+        this.isActive = isActive;
+    }
 }

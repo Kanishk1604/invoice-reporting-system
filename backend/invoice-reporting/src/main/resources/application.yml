@@ -14,3 +14,8 @@ spring:
     properties:
       hibernate:
         format_sql: true
+
+  task:
+    scheduling:
+      pool:
+        size: 2
