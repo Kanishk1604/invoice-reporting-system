@@ -1,6 +1,8 @@
 package com.invoice.reporting.export.xml;
 
 import jakarta.xml.bind.annotation.*;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -12,6 +14,7 @@ public class InvoiceXml {
     private String invoiceNumber;
 
     @XmlElement
+    @XmlJavaTypeAdapter(LocalDateTimeAdapter.class)
     private LocalDateTime generatedAt;
 
     @XmlElement

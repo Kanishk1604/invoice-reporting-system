@@ -61,7 +61,7 @@
 -- FROM Invoices
 -- ORDER BY GeneratedAt DESC;
 -- SELECT * FROM Orders WHERE Status = 'SHIPPED';
-
+-- SELECT * FROM InvoiceRunLogs ORDER BY StartedAt DESC;
 -- SELECT o.OrderId, i.InvoiceId
 -- FROM Orders o
 -- LEFT JOIN Invoices i ON o.OrderId = i.OrderId
@@ -71,15 +71,48 @@
 -- VALUES (1, GETDATE(), 'SHIPPED');
 -- INSERT INTO OrderItems (OrderId, ProductName, Quantity, UnitPrice)
 -- VALUES
--- (SCOPE_IDENTITY(), 'Mouse', 2, 40.00);
-SELECT * FROM Invoices ORDER BY GeneratedAt DESC;
+-- (SCOPE_IDENTITY(), 'Pen', 2, 40.00),
+-- (SCOPE_IDENTITY(), 'Notebook', 1, 80.00),
+-- (SCOPE_IDENTITY(), 'Sheets', 1, 200.00);
+
+-- SELECT * FROM Invoices ORDER BY GeneratedAt DESC;
+
+-- SELECT OrderId, CustomerId, OrderDate, Status
+-- FROM Orders
+-- ORDER BY OrderId DESC;
+-- 1. Create a new order
+-- INSERT INTO Orders (CustomerId, OrderDate, Status)
+-- VALUES (1, GETDATE(), 'SHIPPED');
+
+-- INSERT INTO OrderItems (OrderId, ProductName, Quantity, UnitPrice)
+-- VALUES
+-- (SCOPE_IDENTITY(), 'Trackpad', 1, 40.00),
+-- (SCOPE_IDENTITY(), 'Lights', 1, 120.00);
+-- select * from orders;
+-- SELECT * FROM Invoices WHERE OrderId = 1006;
+
+-- SELECT
+--     OrderId,
+--     '[' + Status + ']' AS StatusWithBrackets,
+--     LEN(Status) AS StatusLength
+-- FROM Orders
+-- WHERE OrderId = 1006;
+
+-- SELECT
+--     InvoiceId,
+--     InvoiceNumber,
+--     OrderId,
+--     TotalAmount,
+--     GeneratedAt
+-- FROM Invoices
+-- ORDER BY GeneratedAt DESC;
 
 -- SELECT * FROM Orders WHERE Status = 'SHIPPED';
 
 -- SELECT * FROM OrderItems WHERE OrderId = 5;
 -- SELECT * FROM Invoices WHERE OrderId = 5;
 
--- SELECT * FROM Invoices WHERE OrderId = 5;
+-- SELECT * FROM Invoices;
 
 
 -- ALTER TABLE InvoiceRunLogs

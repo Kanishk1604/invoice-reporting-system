@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Invoice>
+    <invoiceNumber>INV-b936b82b-47ba-4926-877b-f35a16729568</invoiceNumber>
+    <generatedAt/>
+    <customer>
+        <name>Acme Corporation</name>
+        <email>billing@acme.com</email>
+        <city>Toronto</city>
+        <country>Canada</country>
+    </customer>
+    <Items>
+        <Item>
+            <productName>Keyboard</productName>
+            <quantity>1</quantity>
+            <unitPrice>120.0</unitPrice>
+            <lineTotal>120.0</lineTotal>
+        </Item>
+    </Items>
+    <totals>
+        <subtotal>120.0</subtotal>
+        <tax>15.600000000000001</tax>
+        <shipping>25.0</shipping>
+        <total>160.6</total>
+    </totals>
+</Invoice>

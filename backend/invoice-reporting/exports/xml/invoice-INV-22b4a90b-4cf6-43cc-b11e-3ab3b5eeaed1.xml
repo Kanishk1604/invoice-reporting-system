@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Invoice>
+    <invoiceNumber>INV-22b4a90b-4cf6-43cc-b11e-3ab3b5eeaed1</invoiceNumber>
+    <generatedAt/>
+    <customer>
+        <name>Acme Corporation</name>
+        <email>billing@acme.com</email>
+        <city>Toronto</city>
+        <country>Canada</country>
+    </customer>
+    <Items>
+        <Item>
+            <productName>Trackpad</productName>
+            <quantity>1</quantity>
+            <unitPrice>40.0</unitPrice>
+            <lineTotal>40.0</lineTotal>
+        </Item>
+        <Item>
+            <productName>Lights</productName>
+            <quantity>1</quantity>
+            <unitPrice>120.0</unitPrice>
+            <lineTotal>120.0</lineTotal>
+        </Item>
+    </Items>
+    <totals>
+        <subtotal>160.0</subtotal>
+        <tax>20.8</tax>
+        <shipping>25.0</shipping>
+        <total>205.8</total>
+    </totals>
+</Invoice>

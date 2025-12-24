@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Invoice>
+    <invoiceNumber>INV-d2d80ab6-ec2d-475a-a1f3-4ad038800221</invoiceNumber>
+    <generatedAt/>
+    <customer>
+        <name>Acme Corporation</name>
+        <email>billing@acme.com</email>
+        <city>Toronto</city>
+        <country>Canada</country>
+    </customer>
+    <Items/>
+    <totals>
+        <subtotal>0.0</subtotal>
+        <tax>0.0</tax>
+        <shipping>25.0</shipping>
+        <total>25.0</total>
+    </totals>
+</Invoice>

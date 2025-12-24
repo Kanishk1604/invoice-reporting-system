@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Invoice>
+    <invoiceNumber>INV-3ad57fe6-f628-470f-b9ca-b675ddaab313</invoiceNumber>
+    <generatedAt/>
+    <customer>
+        <name>Acme Corporation</name>
+        <email>billing@acme.com</email>
+        <city>Toronto</city>
+        <country>Canada</country>
+    </customer>
+    <Items>
+        <Item>
+            <productName>Mouse</productName>
+            <quantity>2</quantity>
+            <unitPrice>40.0</unitPrice>
+            <lineTotal>80.0</lineTotal>
+        </Item>
+    </Items>
+    <totals>
+        <subtotal>80.0</subtotal>
+        <tax>10.4</tax>
+        <shipping>25.0</shipping>
+        <total>115.4</total>
+    </totals>
+</Invoice>

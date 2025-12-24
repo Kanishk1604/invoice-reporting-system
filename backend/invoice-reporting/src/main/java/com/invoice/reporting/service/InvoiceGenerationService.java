@@ -42,9 +42,9 @@ public class InvoiceGenerationService {
         
         // System.out.println(">>> Invoice generation STARTED");
 
-        if (runLogRepository.existsByIsActiveTrue()) {
-            return; // another run is already in progress
-        }
+        // if (runLogRepository.existsByIsActiveTrue()) {
+        //     return; // another run is already in progress
+        // }
 
 
         InvoiceRunLog runLog = new InvoiceRunLog();
@@ -58,7 +58,7 @@ public class InvoiceGenerationService {
         try{
             
             List<Order> shippedOrders = orderRepository.findByStatus("SHIPPED");
-
+            
             for(Order order: shippedOrders){
 
                 // System.out.println(">>> OrderId=" + order.getOrderId() + ", status=[" + order.getStatus() + "]");
@@ -85,11 +85,7 @@ public class InvoiceGenerationService {
                 invoice.setStatus("GENERATED");
                 invoice.setGeneratedAt(LocalDateTime.now());
                 
-                // System.out.println(">>> CREATING invoice for OrderId " + order.getOrderId());   
-                
                 invoiceRepository.save(invoice);
-
-                // System.out.println(">>> SAVED invoice for OrderId " + order.getOrderId());
 
                 xmlExportService.exportInvoice(invoice, items_ordered);
                 generatedCount++;
@@ -100,11 +96,12 @@ public class InvoiceGenerationService {
         } catch (Exception e) {
             runLog.setStatus("FAILED");
             runLog.setErrorMessage(e.getMessage());
-        }finally{
-            runLog.setFinishedAt(LocalDateTime.now());
-            runLog.setIsActive(false);
-            runLogRepository.save(runLog);
         }
+
+        runLog.setFinishedAt(LocalDateTime.now());
+        runLog.setIsActive(false);
+        runLogRepository.save(runLog);
+        
 
     }
 
