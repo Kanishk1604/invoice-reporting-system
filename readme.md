@@ -22,9 +22,9 @@ Orders (Upstream System)
 Invoice Automation Service
         ->
 Invoices (DB)
-        ↓
+        ->
 XML Export (Snapshot)
-        ↓
+        ->
 PDF Generation
 
 This service assumes orders are created by an upstream system and focuses exclusively on invoice automation.
