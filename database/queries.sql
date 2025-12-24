@@ -86,8 +86,7 @@
 
 -- INSERT INTO OrderItems (OrderId, ProductName, Quantity, UnitPrice)
 -- VALUES
--- (SCOPE_IDENTITY(), 'Trackpad', 1, 40.00),
--- (SCOPE_IDENTITY(), 'Lights', 1, 120.00);
+-- (SCOPE_IDENTITY(), 'TV', 1, 400.00);
 -- select * from orders;
 -- SELECT * FROM Invoices WHERE OrderId = 1006;
 

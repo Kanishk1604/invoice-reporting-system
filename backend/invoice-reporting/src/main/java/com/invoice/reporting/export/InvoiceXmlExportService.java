@@ -3,6 +3,7 @@ package com.invoice.reporting.export;
 import com.invoice.reporting.entity.Invoice;
 import com.invoice.reporting.entity.OrderItem;
 import com.invoice.reporting.export.xml.*;
+import com.invoice.reporting.export.pdf.InvoicePdfExportService;
 
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.Marshaller;
@@ -21,7 +22,7 @@ public class InvoiceXmlExportService {
     public void exportInvoice(Invoice invoice, List<OrderItem> items) throws Exception {
 
         InvoiceXml xml = map(invoice, items);
-
+        
         JAXBContext context = JAXBContext.newInstance(InvoiceXml.class);
         Marshaller marshaller = context.createMarshaller();
         marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
@@ -31,6 +32,9 @@ public class InvoiceXmlExportService {
 
         Path file = dir.resolve("invoice-" + invoice.getInvoiceNumber() + ".xml");
         marshaller.marshal(xml, file.toFile());
+
+        InvoicePdfExportService pdfService = new InvoicePdfExportService();
+        pdfService.exportInvoicePdf(xml);
     }
 
     private InvoiceXml map(Invoice invoice, List<OrderItem> items) {
