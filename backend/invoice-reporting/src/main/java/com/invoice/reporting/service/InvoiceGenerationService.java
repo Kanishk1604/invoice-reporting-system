@@ -64,7 +64,7 @@ public class InvoiceGenerationService {
 
                 // System.out.println(">>> OrderId=" + order.getOrderId() + ", status=[" + order.getStatus() + "]");
 
-                if (invoiceRepository.existsByOrder_OrderId(order.getOrderId())) {
+                if (invoiceRepository.existsByOrder_OrderId(order.getOrderId())) { //enforcing idempotency
                     continue;
                 }
                 List<OrderItem> items_ordered = orderItemRepository.findByOrder_OrderId(order.getOrderId());
