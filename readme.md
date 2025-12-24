@@ -17,10 +17,10 @@ Key Features
 
 High-Level Architecture
 
-Orders (Upstream System)
-        ↓
+Orders (Upstream System) 
+        ->
 Invoice Automation Service
-        ↓
+        ->
 Invoices (DB)
         ↓
 XML Export (Snapshot)
